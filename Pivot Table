@@ -1,0 +1,88 @@
+Pivot Table
+This is an advanced Pivot Tables.  Now, what you can see on the screen here is just some basic sales information. 
+Now, I have quite a lot of information in here. If I press 'control+down' arrow, that's going to jump me all the way
+down to the last row of my data. So, you can see how many rows of data I have. So, a fair amount of data
+that I want to analyze in a pivot table. 'Control+up' arrow is going to jump me back up to the top of my data. What I want to 
+do is I want to analyze this data in different ways, Now, I have actually jumped ahead a little bit. So, this data that
+I have in this spreadsheet that I'm going to use is already what we would classify as clean. Now, we are going to go into 
+cleaning data when we get a little bit further into, but suffice to say that cleaning data just means you you're starting off 
+with data that's consistent and that doesn't have any anomalies. 
+
+So, we don't have things like blank rows in our data. We don't have blank cells, we don't have inconsistent case, we don't have
+duplicates, and everything is formatted correctly. Now, the final step I would take here before putting this data into a pivot 
+table, is that I would put this data into a regular table in Excel. And that's a fairly simple process. You can do it a few ways.
+I could choose to do 'Ctrl+A' to highlight all of my data, and then 'Ctrl+T' which is going to allow me to create a table.
+Alternatively, what I can do is I can go up to that home ribbon and I can go across to the styles group, the 'Format as Table'
+button, and I can choose any one of these different table formats. It's going to ask me, where is my data? And because I was
+clicked within my data, it selected everything around my selection. I'm going to say yes, my table does have headers, and I'm 
+going to click on 'OK'. And now my data is essentially in a table. Now, how can you tell the difference between data that's in
+a table and data that isn't? Because it doesn't look a great deal different to what it was prior to putting in the table. Well, 
+there's a couple of things: The first thing is if you clicked within your data, if your data is in a table, you're going to see 
+the "Table Design" context choice ribbon, and that is a ribbon in Excel that only appears when it's needed. So, whilst I'm clicked 
+in my data, I can see I have a table design ribbon and I have all of my options on here for formatting my table. If I was to click
+my mouse outside of that table, you'll see that that ribbon disappears, and that's why it's called context choice; only there when
+we need access to it. So, if you click in your data and you don't see that table design ribbon, then it's more than likely that your
+data hasn't been put inside a table. Another thing that will happen when you create a table from data is that you'll get these handy
+filter buttons listed at the top of each column. So, if I just wanted to filter by a specific town, I could de-select everything and
+maybe I'm only interested in the data for Aberdeen and Barnsley, I can select those two, click on 'OK', and it's going to filter my 
+data for me, and I now only have data for those two particular towns. Now, I'm going to clear that filter like so to put everything 
+back again. So, those are kind of two ways that you would know that your data has been put inside a table.
+
+Now, why is this so important when you're creating pivot tables? Well, what I'm going to do here is from this table design ribbon is
+I'm going to name my table. And you see the first group there; it's called Properties, it says Table Name, and by default, Excel has
+given my table the name of Table1. when you are naming tables, or even if you're naming ranges of cells, you can't have any spaces
+in between the two words. So, I couldn't have Sales space Data. It needs to be one word or separated with an underscore. 
+
+Super important point here, remember to hit 'enter' once you've named your table so that that table name sets. So, now when I create
+my pivot table, everything is going to be a lot easier for me to read; It's going to be a lot easier for me to understand. 
+And if we're now pulling anything from that table, we can utilize the table name as opposed to the cell references of the table. 
+So, now I've done that final step, I'm going to summarize my data, or analyze my data using a pivot table.
+Again, a few different ways that you can do this. The one that's probably easiest for me at the moment, based on the ribbon that I'm 
+currently clicked on, which is the table design ribbon, is to utilize the Summarize with PivotTables option just here. Alternatively, 
+if you jump to the Insert ribbon, you do have a PivotTables button; it's the first one in that tables group. Clicking either of those
+is going to take you to exactly the same dialog box. So, now I got this box, it says, Choose the data that you want to analyze, and you
+can see that Excel has intuitively picked up that I probably want to use the Data range. And you can see those marching ants around
+the outside, so that's showing me that it's picking up all of my data. If I had my data saved off somewhere else and maybe in another 
+Excel spreadsheet, or maybe I wanted to import it from another system or application, I could also choose to use an external data source.
+
+
+The second thing I need to tell Excel is where I want this PivotTable report to be placed. Do I want it on a brand new worksheet or 
+an existing worksheet in my workbook? Now one more tip here, I would always suggest that you do keep your raw data separate from your
+pivot tables. So, in this instance I always like to choose new worksheet. And I'm going to click on 'OK'. And what you'll see now, if
+you look down the bottom of the screen, I have a brand new sheet called Sheet2. I'm going to 'right click' and I'm going to rename that 
+to PivotTable.
+
+And now, what you see, is that on the left hand side of the screen, I have my empty pivot table report, and on the right hand side of
+the screen I have this PivotTable Fields pane. For some reason you don't see this pane, it might be that you're not actually clicked
+in the pivot table reports on the left hand side. For example, if I click in another cell, you can see that that pane disappears. 
+So, if you can't see that, make sure you are clicked in that pivot table part. If you still can't see it, it might be that you've
+accidentally closed it down, and all you need to do to get that back is go up to your PivotTable Analyze ribbon, in the Show group 
+on the end, you have a 'Field List' button, click that and that little pane is going to pop back out again. Now, what this PivotTable
+pane shows you are all of the column headings from your raw data. So, you can see there, I have month, store, town, store code, 
+country, manager, category, and sales. And then underneath that, I have these four different areas, filters, columns, rows, and values.
+And the simple fact of dragging any of these fields into any of these four areas, that's what's going to build my PivotTable. 
+Now, this sometimes is a little bit of a trial and error. It really depends the kind of information you're trying to extract. 
+So, let's do a very basic example. Maybe I want to see all of these sales broken down by manager. What I would do is I would grab 
+my sales field, I'm going to drag that down into the values area. And then I'm going to grab my 'Manager' field and I'm going to drag
+that down into rows. And what you'll see on the spreadsheet is that as I dropped that, I now have all of the managers listed in the rows,
+and I can see the total sales for each of those managers. And just to show how you can manipulate your table and get it to display how 
+you want, if I was to move the manager field up into the columns area, you're going to see a display in a slightly different way. 
+So, we now have them running across in the columns and we have the sales underneath. Now, that's not a particularly nice way of
+displaying this data. So, I'm going to move manager back to rows. Now, what if I wanted to do a slightly different analysis? Maybe I
+wanted to analyze the sum of all the sales by category. Again, I can get rid of this manager field, simply by clicking and dragging 
+it outside of the pivot table. I can grab the 'Category' field and drag that down and drop it into rows. And now I have the sum of
+sales performed by category. If I wanted to do something a little bit different, maybe if I move category up into Filters, you'll see
+now at the top I get this little dropdown which is showing me all of categories. And currently I still just have the sum of sales. 
+So that's not particularly meaningful. Although I could if I want to see all of the sales for the 'Accessories' category, click on 'OK',
+like so. But if I wanted to break that down even further, I could maybe choose to grab the town field, drag that down into rows. 
+So, now I'm seeing a list of all of the towns, the total sales, and I can filter by specific categories. So, I could say 'All' to 
+see everything. Alternatively, if I was just interested in maybe 'Games' and if I want to select multiple, I have a look check box
+at the bottom. I'm interested in 'Games', 'Laptops', and 'Memory Cards'; just the sales for those three categories, click on 'OK',
+and my data is going to update. So, that is what that little 'Filter' area is up there. I'm going to go in and I'm going to say, 'All' 
+and click on 'OK'. I could drag the 'Category' field into columns and get my data to display a completely different way. So, now I have
+my 'Towns' listed in the rows, my 'Categories' in the columns, and my 'Sum of Sales' in the middle. And that is a very basic pivot table;
+how you create one, and how you can utilize those fields, move them around, pivot the data and really get out of the data, the analysis 
+that you require. Now, of course, there is so much more to this, which we're going to go into throughout this course. But I just wanted 
+to get you started off with that basic level of understanding, if it's been a while since you've put together a pivot table. That's it 
+for this module. I will see you in the next one.
+Share
