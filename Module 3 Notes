@@ -1,0 +1,274 @@
+ Cleaning Data
+
+Now this 1st one is gonna be on a fairly small data set. And it's the one that we've used in the last couple of classes. 
+So, we're going to open a text file in Excel and then we're going to use some techniques in Excel to clean up that data prior to 
+putting it into a pivot table. Now, instead of importing this data in like we've been doing previously from the data ribbon,
+I'm actually gonna jump straight to the file menu, and I'm going to open the file directly, and the file I'm gonna open is this one 
+just here, ImportText2.txt.
+
+Now you can see this listed in my Recent files as I have recently used it, and this is a text file. So, you can open other file types
+aside from .xlsx files in Excel. And if it requires Excel to convert them, then it's gonna walk you through that particular process. 
+So, let's open this text file and see what happens.
+
+So, I've tried to open it, and Excel has popped up the Text Import Wizard. Now, wizards are always really great as they generally tend 
+to walk you step by step through a process. And many of the options we're going to through are very similar to when we use the get data
+option from the data ribbon. Now the 1st thing this wizard is asking me for is to select the file type that best describes my data and
+by default it's selected delimited.
+
+And what that means is that characters such as commas or tabs separate each field. I can see a preview of my file in the lower half 
+of the screen and you can see here that each field is separated by a semi colon. So, in this instance, Delimited would be the correct 
+option for me to select here.
+
+I'm also gonna say my data has headers and click on Next to move on to the next step of the wizard.
+Now this is where I get to define what delimiter is being used in my data. Now by default, it's selected tab and that's not correct 
+in this instance, I want to select semi colon, and you can see as soon as I do that in the data preview window at the bottom, Excel has 
+split up my data wherever it finds that semi colon character, which is exactly what I want.
+
+If I click Next again to move on to the final stage of this import wizard, this is where I can go through and I can set some column
+data formats if I want to. Now, I'm actually going to do this once it's been imported into Excel. So, this stage I'm just going to 
+click on the Finish button to load that data into my Excel worksheet, and there we go. So, this is what it looks like once it's been 
+imported in. So, there's gonna be a few things I need to do here to get this data into a state that's conducive to creating a pivot 
+table. Now, the most obvious thing here is that my columns aren't particularly organized in a very neat way. So, I'm gonna want to 
+resize these columns. So, very simply a quick way to do this is to hover your mouse over the 1st column, click and drag across to
+highlight all of the columns and in order to resize all of the columns so that they fit all of the data within that column correctly. 
+All you need to do is hover your mouse over one of the column dividers until you get that black, double headed arrow, double click and 
+it's going to resize all of the columns in one go. So, now that makes it a lot easier for me to actually read what data I have in my 
+worksheet. Now, what are the other glaring errors of things I might want to correct in this data? Well the one that stands out the most
+to me is that I have blank rows throughout my data. Now this isn't a particularly large data set, and I would imagine that a lot of the
+data sets that you're going to be dealing with are going to be a lot larger than this, maybe hundreds or even thousands of rows. 
+So, whilst it would be quite easy for me to go through and manually delete out all of these blank rows, if you have a very large data 
+set that's going to be really time consuming and probably not something that you want to spend time doing. So, I'm going to show you a 
+much quicker way of doing this where you can delete all blank rows in one go. Now the 1st thing you want to do is make sure that you 
+have all of the columns selected. So, again I'm going to click, I'm just going to drag across, I'm going to go up to my Home tab, 
+or my Home ribbon all the way across to this editing group on the end and I'm going to utilize the Find and Select, Go To Special option.
+And one of the options that we have in Go to Special, is to select all blanks, and click on 'OK', and there we go. We now have all of 
+those blank rows selected all in one go which means I can very easily now go in and just delete them all. And again I'm going to stay 
+on the Home ribbon. I'm going to my Cells group, click the Delete button drop-down, and select Delete Sheet Rows. 
+So, very quickly I've managed to delete all of those blank rows out. I haven't had to go in and do them manually. 
+Now the next thing I'm going to do here is I'm going to through and make sure all of the items in my columns have the correct 
+formatting applied to them. Some guys select column A. I'm going to my Home tab and look in this number group and I can see here
+that we currently have general formatting applied. So, I might want to change that to text.
+
+I'm going to column B. Now I can see that in column B. We have some dates. So, again I'm probably going to want to change that 
+formatting to short date. Now, column C has salaries. So, I could go up to here and this is really personal preference whether you
+want to choose currency or accounting. Now I'm going to choose currency in this case and you can see that my currency is set to 
+US dollars and this really depends what you have your local set to in Excel. Of course if you do want to change that currency symbol 
+again from that number group, you can click the drop-down just here and you have some popular currencies that you might want to use, 
+but also you could go into more accounting formats and you can go through a whole list of different currency symbols, but for now I'm
+going to leave mine on US dollars. And then finally department and job title, they're both text fields, so I'm going to do these in 
+one go by highlighting both of them and changing those to text. So, now I know that, I have the correct formatting applied to all of
+my columns. Now the next thing I might want to do is looking at this employee name column. I can see that my employee names are all in
+capital letters. Now I actually want these to be what we call proper case where only the 1st letter of each word is capitalised.
+And I also want to split up this employee name. I want to have one column with the last name and one column with the 1st name. So, 
+let's take a look at how we can deal with all of those things. So, the 1st thing I'm gonna deal with is we're going to deal with 
+changing the case, and to do this, I'm going to add in or insert what I call a helper column. So, helper columns and you'll hear lots
+of tutorials refer to helper columns, the columns that you add in in order to maybe do some cleaning up or working out and you usually
+delete them after you finished using them. So, this is my 1st helper column. And what I'm gonna do in this helper column 1st of all is 
+I'm going to change the case to what we call proper case, and you can do this very simply in Excel by using one of the text functions. 
+Now if we jump up to the Formulas ribbon in the Functions library underneath Text, you'll find all of your text functions, and the one
+we're going to use is called Proper. Now if you're more comfortable using the functions dialog box in order to do these, then by all 
+means you can do that. Alternatively you can just type the function directly into the cell. So, I'm going to type in =Proper, 
+I'm going to open my bracket and you can see there's only one argument for the Proper function, and that is the text we want to
+make proper case, and that is the text in cell A2. Close off the bracket and hit Enter, and there we go, that's now changed it to 
+proper case. And I can easily fill this down simply by using the auto fill handle in the bottom right hand corner, that little green 
+square, hover over until you get the little black cross, double click and it's going to copy that formula all the way down. 
+So, now I've done that, I essentially have two columns, displaying the same information. So, you might think you can then go in and 
+just delete out this column, but you're going to find if you do that you're going to get an error because essentially you've deleted
+out the column that that function refers to. So, we need to go about this in a slightly different way. What I want to do is highlight
+column B, where I have my clean data. I'm going to click the 'Copy' button on the 'Home' ribbon. And what I'm going to do is, I'm just
+going to paste the values only directly over the top. Now, when you click the bottom of the 'Paste' command, you have lots and lots of 
+different 'Paste Options' and you have a 'Paste Values' group. Now, when you're pasting values, it essentially will throw away any of 
+the underlying formulas and will literally just paste what you can see in the cell. So, if I do paste values, hit the 'Escape' key,
+you can see now when I click on these cells, if you look up in the formula bar, it just shows me the text in that cell. 
+It's not showing me that there's any proper formula underneath there. So, I can now safely delete out that first column, and 
+everything works nicely. Now, I'm going to go through and I'm going to do exactly that same process for the Department and the 
+Job Title to make those proper case. So, once I've done that I will come back and rejoin you for the next part. So, there we go. 
+So, now I've made the information in columns D and E; those are also in proper case. So, things are starting to look a lot better 
+than they were when we first imported in this particular text file. A couple of other things I want to do. Now, this Employee Name, as
+I said, I want to split this up. So, the last name is in one column and the first name is in another. So, again, what I'm going to do
+is I'm going to insert a column just here and there is a really cool little tool in Excel that's going to make this super quick and
+easy for you to do. And it's called 'Flash Fill'. Now 'Flash Fill' was introduced in Excel 2013 so if you have a version of
+Excel that's earlier than that, then you're not going to have access to this utility. But if you have Excel 2013, 2016, 2019, or Office
+365, then you're definitely going to have this button which you will find on the 'Data Tab' in the 'Data Tools' group. And it's this 
+little one just here, 'Flash Fill', you can see the keyboard shortcut for that is also Ctrl+E.
+
+And what 'Flash Fill' does is it enables you to fill down information really quickly. So, I'm going to talk to this column, Last name, 
+and all I need to do is type in the first one. So, there we go, Juarez. If I click on that cell, go to my 'Data Tools' group and click 
+on the 'Flash Fill' button, like magic, it's going to fill all of those last names down for me. And I can do exactly the same by
+inserting another column and this one is going to be First name.
+
+And a way to do it is type in the first name and another way that I can utilize 'Flash Fill' is not by clicking on the 'Flash Fill' 
+button, but I can click in the cell underneath and as soon as I start to type in the second one... can you see a ghost fills down the 
+rest of those names for me. So, all I have to do is here enter to confirm and there we have all of those names. I can now safely 
+delete column A and I have very quickly my names separated into two columns. Something else that's really important to check for, is 
+to check that you don't have any duplicate entries in your data. And again, Excel has a useful utility that's available on the 'Data'
+ribbon. It's in the 'Data Tools' group and it's this one just here 'Remove Duplicates' and it says it's going to delete duplicate rows 
+from a sheet and you can pick which columns should be checked for duplicate information. So, you can see here, because I'm clicked in
+my data, it's picked up all of my data. And I have all the columns selected, so essentially what Excel is going to do, it's going to
+make sure that every single column is the same before it considers it a duplicate. So, what we mean by that is you can see here that 
+some people have the same job titles. The sales executive, sales executive... it doesn't necessarily mean, that the entire row is 
+duplicate information, it just means that they have the same job title. So, I'm telling Excel, make sure that every column which I 
+have ticked just here is a duplicate before you remove it. So, I'm going to click on 'OK'. And you can see here, three duplicate 
+values found and removed. So, a really nice quick little way to remove duplicates from your data. I also might decide that I want to 
+change some of the wording in these columns. So, for example, in the department column, you can see that for most of these departments,
+I have the full department listed out, but for marketing, I just have Mktg.
+
+So, I'm actually going to change that to say Marketing. So, I've highlighted my Column. I'm going up to that 'Home' ribbon. 
+I'm going to 'Find and Select' and I'm going to select the 'Replace' option, Ctrl+H is the keyboard shortcut for that. It's going to
+say, what do you want me to find. So, in this case Mktg and replace it with Marketing. And I'm going to say 'Replace All' And they've
+made one replacement. And this time we're going to type in R & D, and we're going to replace it with Research and Development, 
+and click 'Replace All', and okay. Now, the final couple of things I might want to do here is I might want to do an overall spell check
+of my text. So, I'm going to jump up to the review ribbon and I'm going to go to 'Spelling'.
+
+Because a lot of these are names, I'm probably going to want to ignore most of these until I get to one that I can see is an error. 
+So, you can see here, this is supposed to say Terry and this is spelt incorrectly. So, I'm going to choose Terry from the suggestions
+and say 'Change'. And my spell check is now complete. The final thing I want to do here before putting this particular set of data into
+a pivot table is to put this into a table. So, if you remember from before we do Ctrl+A to select all of our data and Ctrl+T will allow
+us to quickly put our data into a table. Make sure that you have 'My table has headers' selected, click on 'OK', and there we go. 
+The data is in a table. I have my 'Table Design' ribbon. If I don't particularly like the colors that have been selected for my table,
+I can choose to change them. And we're now ready to summarize with a pivot table. So, hopefully, that has introduced you to a few 
+techniques that you can use to prepare your data for analysis. We're going to continue on this theme. We're going to use a bigger 
+set of data in the next module and we're going to move into talking about tabulate data. So, please join me for that.
+
+
+Tabular Data
+
+I'm going to show you exactly why it's so important to put your data into a table when you are doing things like pivot tables 
+and pivot charts. So let's start out by taking a look at the data set that we are looking at on the screen. Now, this is a much
+larger dataset than the one that we had in the last module. So if I jump all the way down to the bottom by doing control down arrow. 
+You can see that this has 707 rows.
+
+Control Home is going to take me all the way back up to the top. Now, some of these techniques that we are going to utilize,
+we saw in the previous class, we are also going to expand on that as well. So I'm going to move fairly quickly through the skills
+that we've already looked at and then we'll go into more detail, the ones that are newer. So starting out, I can see again here, 
+I have lots of empty or blank rows in my data. So we are going to go through that same process of highlighting all of our columns, 
+going up to find and select, go to special and selecting blanks. Now, interestingly what you'll see here not only has it picked up 
+those blank rows but it's also picked up some blank cells in my data. Now, actually don't want to remove these at this stage. 
+So I'm quickly going to go through, hold down my control key and just click to deselect those. Now, I only have those rows selected,
+I'm going to go to delete. Delete sheet rows and those ones are gone. Now, just going back to this column, column G: the discounts'
+column. I can see in this column, I do have a number of individual cells that are showing as blank. Now, I would say one little tip 
+when you're creating pivot tables, it's always good to have at least something in a cell, even if it's just zero. So again if you have 
+lots of cells in a particular column or columns. There is a quick way of just filling in a number or even just a zero into all of those
+cells in one go. So the first thing I'm going to do is, I'm going to highlight this column. Now, if you have blank cells in other 
+columns, you could highlight all of the columns, but I just have them in column G. I'm going to go back to find and select, go to
+special and select those blanks once again and now if I want to enter a zero into these cells, all I need to do is press zero, 
+control + enter, and it's going to fill all of those blank cells with zero. So again, a really good time saving technique to add to 
+your toolkit. Now, going back to this first column, column A looking down here, I have some country names. Now, I can see here that 
+the UK, is listed as UK. Whereas we have the USA listed out in full as United States of America. So what I'm going to do here is I'm 
+going to find and replace the word UK with United Kingdom. So again, we saw this in the previous module, we're going to highlight 
+I column. We're going to go to find and select, and choose replace, control + H if you like your shortcut keys. What we're going to do 
+is we're going to say find what UK, replace with [Author typing] United Kingdom. 'Replace all' it's made 140 replacements, and close 
+that down. Now, I can see here with column B that we have quite a few different issues going on here. So the word Kensington is all 
+in uppercase, and I actually want everything again, to be proper case. But I also have a little bit of an issue with some of these 
+individual cells. So where we have Royal Oak, you can see that that's been imported in and it's split across onto two lines. 
+So I'm going to need to deal with that as well. Another issue I can see, is that for some of these, some particular rows these rows
+just here. 18-22, we have some erroneous spaces at the beginning of these words. So I'm going to want to utilize some text functions
+to deal with all of these issues that we've got going on in column B. So I'm going to add in my helper row, insert. 
+Unfortunately, what we can do here is we can combine functions together in order to achieve our outcome. So as we know the way that
+we change text from all capitals to proper case is by using the function equals proper. Now what I could do here is just select the 
+text, close off my bracket but if I copy this down it's only going to fix the capitalization problem. It's not going to fix any of 
+these other issues. What I'm trying to get away from is really adding more helper columns in order to deal with each issue individually.
+I want to ideally be able to deal with everything within this one column. So one thing that we can do is if we delete out where it says
+B2, I can combine my text functions together so I'm going to have equals proper. I'm going to open my bracket and then I'm going to 
+add in another text function. And the first one I'm going to add in is the function called clean. And you can see that as I type that
+in the little screen tip says that it removes all non- printable characters from text. So if you have non printing characters in there,
+or if you have manual line breaks in there which is what we have going on in Cell B8 where it's split across two lines. The clean
+function is going to remove all of those types of things. Now when it comes to erroneous spacing. So again, if we look down into 
+cell B19 for example, you can see that we have a lot of space before the word Vermont. Now there's another text function that's 
+going to get rid of all those erroneous spaces and that might be leading spaces, trailing spaces or weird spacing in the middle of
+your words. So I'm going to add another function so, I'm going to open another bracket and that function is the trim function.
+And again you can see it says removes all spaces from a text string except for single spaces between words. So I've combined three 
+text functions into one formula.
+
+I'm going to open my bracket and now it's asking me for the text. I'm going to select B2. And remember you need to close off as many 
+brackets as you open. So I'm going to close off B2, close off trim and close off clean, hit enter. And now if I copy this down by 
+double clicking to auto fill, you can see there all of those issues have now been fixed. We're going to do our old trick of copying
+and pasting values. So I'm going to select columnC. I'm going to click the copy button, I'm going to do paste, and I'm going to paste 
+those values directly over the top so I can safely then delete out column B. Am just going to add that title back in of product. 
+So very quickly we've been able to deal with a number of different issues, all within one formula. What am then going to do is make
+sure that all of my columns are formatted correctly, so column A.
+
+I'm going to change that to text format. ColumnB is also going to be text. Now, units sold, I'm going to put that to number. 
+And you can see here now I've changed that to number, it's actually put in two decimal places after the number which I don't really
+want. So from my number group I have my increase and decrease decimal buttons. So I'm going to say decrease those decimals down to zero.
+Now, manufacturing price, sale, price, gross sales, discounts, sales, COGS, and profit. Those are all currency fields. So I'm going to 
+select all of these columns. I'm going to go up and I'm actually going to apply accounting format this time. And as I said, the 
+currency format that I'm using is US dollars. This date Column, column K, I have some really weird things in here. And this is fairly 
+common in Excel. If you ever see a date displaying as a weird looking number, all you need to remember is that by default,
+Excel classes a date as a number in the background, and the number you see is actually the number of days past the 1st of January 1900. 
+So according to Excel 1900 is virtually when the world began. And if you are seeing this weird number instead of the day, it usually 
+always means that you just don't have the correct number formatting applied, so I don't in this case. So I'm going to change that to
+short date. Month name, that's the text column that's fine. And year, I'm happy to leave that on text. I'm going to do a final check 
+on duplicates. So up to 'Data', into my 'Data tools' group, I'm going to click the remove duplicates button. I'm checking for complete 
+duplicates. I want to have all of my columns selected, click on 'Okay'. It's found five duplicates which I'm going to remove, 
+and there we go. I am pretty happy with how my data is looking. So, as we've seen, the final step that I always like to do is to
+put my data into a table. Control A to select everything. And we've seen a couple of different ways that you can put your data into a 
+table. You can press control T you can also go to the home ribbon and select a style from the format as table drop down.
+
+You can even go to the insert ribbon and just select the table option. But another option that you have when you highlight all of your 
+data, if you look right down in the bottom right hand corner, you can see how this little icon popping up just there. Now, that is the 
+Quick Analysis tool, Ctrl + Q. Is the keyboard shortcut. Now, if you click this, you're going to get a whole host of different options.
+What Excel is basically doing is analyzing the data that you have selected and then suggesting some things that you might want to do 
+and that's across every different element in Excel. So, formatting, I could put it into a chart. I could add some totals or work out 
+some totals. But one option I have is also tables.
+
+So, I'm going to click on the table option and that's going to put my data into a table. Now , I'm not overly fussed about the color 
+scheme that we have here, but I'm going to change this to a color that matches the overall theme a little bit better. Now, again, as I
+said, once you've put your data into a table, you're going to have access to the table design, contextual ribbon. And as we've seen 
+before, I always like to name my tables in this first group.
+
+So, I'm going to give my table a meaningful name. I'm going to call this, Product_Data and hit enter. Now, the final thing I want to 
+talk to you about in this module is the importance of putting your data into a table. Because I think sometimes people get confused on 
+this step. They think, well, why do I have to put it into a table? How is that going to be helpful to me? Well, the way that it's going
+to be helpful, is when it comes time to add new data into your data set. Most of the time, data doesn't remain static forever. If I was
+to create a pivot table or maybe some kind of chart utilizing this data, it might be that next month I add in more data and I want 
+everything to update nicely. And I want the update process to be as efficient as possible. Now, the way to do that is to put your data 
+into a table as we've done here. So, I'm very quickly going to show you why this is helpful. Now to demonstrate this, I'm not going to 
+put this into a pivot table. I'm just going to quickly put it into a pivot chart. So, very simply I'm going to go up to the insert 
+ribbon and I'm going to go to pivot chart.
+
+I want to use my product data, data range and I want to put it on a new worksheet, and I'm going to click on, 'okay'. Now, I'm just 
+going to add a couple of fields in here. So, I'm going to say Gross Sales in the Values and we're going to do it by product in the
+categories column. So, now what I'm going to do is I'm going to add in some new data and show you how easy it is to update a chart
+once your data is in a table. So, let's go back to our data and I'm going to do control down arrow just to jump down to the bottom 
+of my data set. Now I'm going to cheat a little bit here, what I'm actually going to do is I'm just going to copy some of this data, 
+control C, I'm going to paste it onto the bottom of this data set, so Control V. Because my data is in a table, it's in tabular format,
+the table expands to accommodate that new data. And because I have named my table product data and the chart is created off of the 
+product data range, it means that anything that is included within that range is going to be automatically updated in the chart. 
+So, let's jump back to my chart, click on it and if I want to update this chart, so it reflects the new data that I've just added.
+All I need to do is go up to the pivot chart, analyze ribbon, and there is a refresh button just here. Now I haven't added that much 
+in, so this change might be very small. But let's click the refresh button and watch the chart for any slight movement and there we go.
+So, we did have a very slight movement and numbers have updated our pivot table and the pivot chart has updated as well.
+Now, if I didn't have my data contained within a table, I wouldn't be able to go in, click on that refresh button and have everything 
+update nicely. It would have taken me a lot longer in order to be able to achieve the same thing. So, that is one of the reasons why 
+putting your data into a table is super important. It just makes your life a lot easier, not to mention the fact that you also have
+these little filter buttons at the top which can really help you organize and sort your data quickly and easily. 
+
+ Question 1
+1. What is the purpose of using the "Remove Duplicates" feature in Excel?
+A: To deletes repeated entries
+
+ Question 2
+2. Which option in Excel can be used to convert text to a proper case format?
+A: PROPER
+
+Question 3
+3. What is the shortcut key for the Find and Replace feature in Excel?
+A:  Ctrl+H
+
+Question 4
+4. Why is it important to format columns correctly before analysis in Excel?
+A: It ensures data is interpreted correctly by functions
+
+Question 5
+5. What does the 'Flash Fill' feature in Excel do?
+A: Automatically fills data based on patterns
+
+
+
+
+
+
+
+
+
